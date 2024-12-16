@@ -18,11 +18,14 @@
     <form>
         <!--Die Labels beschreiben die Textboxen. br bricht die Zeile um.-->
         <label>Benutzername</label><br>
-        <input><br>
+        <input name="IdKunde"><br>
         <label>Kennwort</label><br>
-        <input type="password"><br>
-        <button>Einloggen</button>
+        <!---type password maskiert die Eingabe mit Sternchen-->
+        <input type="password" name="Kennwort"><br>
+        <button formaction="/login">Einloggen</button>
     </form>
+
+    <p><%= Meldung %></p>
     
     <footer>
         <p>Borken-Bank AG</p>

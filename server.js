@@ -1,7 +1,17 @@
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
+class Kunde{
+	constructor(){
+	this. Nachname
+	this.Vorname
+	this.Benutzername
+	this.Kennwort
+	}
+}
+
+let kunde=new Kunde ();
+kunde.Nachname = "Kiff"
+kunde.Vorname = "Pit"
+kunnde.Benutzername = "pk"
+kunde.Kennwort = "123"
 
 'use strict';
 
@@ -125,7 +135,39 @@ app.post('/geldAnlegen', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-	res.render('login.ejs',{});
+	res.render('login.ejs',{
+		Meldung: "Alles easy."
+	});
+});
+
+app.post('/login', (req, res) => {
+
+	//Die Werte, die der Kunde im Formular eingegeben hat, werden an den Server gesendet.
+	//Der Wert der Variablen Betrag wird aus dem body der Kundenanfrage (req) ausgelesen und zugewiesen an die lokale Variable
+	//namens Betrag.
+
+	let benutzername = req.body.IdKunde;
+	console.log("login: Benutzername:" +benutzername)
+
+	let kennwort = req.body.Kennwort;
+	console.log("login: Kennwort:" +kennwort)
+
+	// Es muss geprüft werden, ob der Kunde mit diesem Benutzernamen das richtige
+	// Kennwort eingegeben hat. 
+
+	let meldung="";
+
+	if(kunde.Benutzername==benutzername &&  kunde.Kennwort==kennwort){
+		console.log("Die Zugangsdaten wurden korrekt eingegeben.")
+		meldung="Die Zugangsdaten wurden korrekt eingegeben."
+	}else{
+		console.log("Die Zugangsdaten wurden nicht korrekt eingegeben.")
+		meldung="Die Zugangsdaten wurden nicht korrekt eingegeben."
+	}
+
+	res.render('login.ejs',{
+		Meldung: meldung 
+	});
 });
 
 // Mit listen() wird der Server angewiesen, auf den angegebenen Host und
