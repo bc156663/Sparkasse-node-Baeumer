@@ -13,6 +13,23 @@ kunde.Vorname = "Pit"
 kunnde.Benutzername = "pk"
 kunde.Kennwort = "123"
 
+class Kundenberater{
+	constructor(){
+		this.Nachname
+		this.Vorname
+		this.Telfonnummer
+		this.Mail
+		this.Bild
+	}
+}
+
+let kundenberater = new Kundenberater();
+kundenberater.Nachname="Pass"
+kundenberater.Vorname="Hildegard"
+kundenberater.Telfonnummer="012345 67890"
+kundenberater.Mail="h.pass@borken-bank.de"
+kundenberater.Bild="pass.jpg"
+
 'use strict';
 
 //Das Modul express wird mit der Funktion require einer Konstanten namens express zugewiesen.
