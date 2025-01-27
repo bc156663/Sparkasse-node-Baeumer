@@ -1,9 +1,12 @@
+//KLassendefinition des Kunden
 class Kunde{
 	constructor(){
 	this. Nachname
 	this.Vorname
 	this.Benutzername
 	this.Kennwort
+	//IstEingeloggt ist ein boolean
+	//Der Wert ist entweder wahr oder falsch
 	this.IstEingeloggt
 	}
 }
@@ -203,7 +206,7 @@ app.post('/login', (req, res) => {
 		meldung="Die Zugangsdaten wurden nicht korrekt eingegeben."
 		kunde.IstEingeloggt = false;
 
-		//Wenn die Zugangsdaten nichtkorrekt sind dann wirddie login-Seite erneut gerendert
+		//Wenn die Zugangsdaten nichtkorrekt sind dann wird die login-Seite erneut gerendert
 		res.render('login.ejs',{
 			Meldung: meldung 
 		});
